@@ -1,0 +1,64 @@
+.item-wrap {
+    height: auto;
+    // width: max-content;
+    display: flex;
+    align-items: center;
+    
+    .item-header {
+        height: auto;
+        width: max-content;
+        font: normal 16px/normal 'BasisGrotesquePro', Consolas, sans-serif;
+        color: rgb(100, 100, 100);
+        position: relative;
+    }
+
+    .item-input {
+        width: 50%;
+        height: 30px;
+        box-sizing: border-box;
+        margin: 0 30px 0 auto;
+        border: solid 1px rgb(226, 226, 226);
+        border-radius: 1px;
+        font: normal 18px/normal 'BasisGrotesquePro', Consolas, sans-serif;
+        color: rgb(113, 148, 214);
+        padding: 0 10px;
+        &:focus {
+            outline: none;
+        }
+        transition: width 1s ease-in-out;
+    }
+
+    .item-input-edit {
+        
+    }
+
+    .item-btn-ok {
+        background-color: rgb(154, 217, 152);
+        border-color: rgb(154, 217, 152);
+        margin-left: 0px;
+        &::before {
+            content: "\2713";
+        }
+    }
+
+    .item-input-ok {
+        border-color: rgb(154, 217, 152);
+        border-width: 2px 0 2px 2px;
+    }
+
+    .failed-fild {
+        border: solid 2px rgb(236, 117, 117);
+        border-radius: 4px;
+    }
+}
+
+.star {
+	font-size: 25px;
+	color: rgb(238, 113, 113);
+	position: absolute;
+	height: auto;
+	width: auto;
+	top: -4px;
+	/* left: 0; */
+	margin-left: 10px;
+}

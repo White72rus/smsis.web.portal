@@ -1,0 +1,86 @@
+.item-wrap {
+    height: auto;
+    // width: max-content;
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+    min-height: 27px;
+    .item-header {
+        height: auto;
+        width: max-content;
+        font: normal 18px/normal 'BasisGrotesquePro', Consolas, sans-serif;
+        color: rgb(100, 100, 100);
+    }
+    .item-value {
+        height: auto;
+        width: max-content;
+        margin-left: 10px;
+        font: normal 18px/normal 'BasisGrotesquePro', Consolas, sans-serif;
+        color: rgb(65, 119, 221);
+    }
+    .container {
+        height: auto;
+        display: flex;
+        // ################### 1 ####################
+        .item-btn {
+            border-radius: 1px 3px 3px 1px;
+            background-color: rgb(239, 239, 239);
+            border: solid 1px rgb(229, 229, 229);
+            // border-width: 1px 1px 1px 0;
+            margin-left: auto;
+            height: 27px;
+            width: 35px;
+            font: normal 12px/normal 'WebHostingHub-Glyphs', sans-serif;
+            color: rgb(161, 161, 161);
+            margin-right: 20px;
+            cursor: pointer;
+            &:focus {
+                outline: none;
+            }
+            &::before {
+                content: "\f1B7";
+            }
+        }
+        .item-btn-ok {
+            background-color: rgb(154, 217, 152);
+            border-color: rgb(154, 217, 152);
+            margin-left: 0px;
+            &::before {
+                content: "\2713";
+            }
+        }
+        // ################### 1 ####################
+    }
+
+    .item-input {
+        width: 0px;
+        height: 27px;
+        box-sizing: border-box;
+        margin-left: 10px;
+        border: solid 1px rgb(226, 226, 226);
+        border-width: 1px 0 1px 1px;
+        border-radius: 3px 1px 1px 3px;
+        font: normal 18px/normal 'BasisGrotesquePro', Consolas, sans-serif;
+        color: rgb(113, 148, 214);
+        padding: 0 10px;
+        &:focus {
+            outline: none;
+        }
+        transition: width 1s ease-in-out;
+    }
+
+    .item-input-edit {
+        width: 29rem;
+        border-color: #9ad998;
+        border-width: 1px 0 1px 1px;
+        margin-left: auto;
+    }
+
+    
+
+    .item-input-ok {
+        border-color: rgb(154, 217, 152);
+        border-width: 2px 0 2px 2px;
+    }
+}
+

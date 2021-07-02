@@ -1,0 +1,9 @@
+
+<account (authEmitt)="onAuth($event)" *ngIf="!isAuth; else data"></account>
+
+<ng-template #data>
+    <router-outlet></router-outlet>
+    <!-- <data-base></data-base> -->
+</ng-template>
+
+<!-- <notify></notify> -->

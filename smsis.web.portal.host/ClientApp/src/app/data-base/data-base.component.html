@@ -1,0 +1,155 @@
+<div id="base">
+    <div id="header" class="">
+        <div class="menu-icon" (click)="onMenuShow()">
+            <span></span>
+            <span></span>
+        </div>
+        <div id="icon"></div>
+        <div id="logo">БД vIMS МРФ Урал</div>
+        <div id="user">{{userName}}</div>
+
+        <button class="button" *ngIf="!isAuth; else loginbtn" (click)="login()">Вход</button>
+        <ng-template #loginbtn>
+            <button class="button" (click)="logout()">Выход</button>
+        </ng-template>
+        
+    </div>
+
+    <div id="select_menu" class="">
+        <label class="checkbox" [ngClass]="{check:isMss}">
+            <input id="mss" type="radio" name="group" (change)="onCheck('mss')">{{checkMss}}
+        </label>
+        <label class="checkbox" [ngClass]="{check:isIms}">
+            <input id="ims" type="radio" name="group" (change)="onCheck('ims')">{{checkIms}}
+        </label>
+    </div>
+
+    <div id="table_wrap" class="">
+        <div id="search" class="">
+            <div>
+                <input [(ngModel)]="stringSearch" id="i_search" class="input" type="text" placeholder="Строка поиска"/>
+            </div>
+            <div>
+                <button id="submit_search" class="button" (click)="onSubmit($event)">
+                    <span class="icon-serch"></span>
+                </button>
+            </div>
+        </div>
+        <div class="box">
+            <div *ngIf="isIms; then ims"></div>
+            <ng-template #ims>
+                <div class="tab-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th *ngFor="let item of imsTableHeader">{{item}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of responseObj;
+                            let index = index;
+                            let odd = odd; 
+                            let even = even" 
+                            [ngClass]="{odd:odd, even:even}"
+                            (click)="showDetail(index)">
+        
+                                <td *ngFor="let j of imsTableElement" 
+                                [attr.id]="j"
+                                >{{i[j]}}</td>
+        
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
+                </div>
+            </ng-template>
+
+            <div *ngIf="isMss; then mss"></div>
+            <ng-template #mss>
+                <table>
+                    <thead>
+                        <tr>
+                            <th *ngFor="let item of mssTableHeader">{{item}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of responseObj;
+                        let index = index;
+                        let odd = odd; 
+                        let even = even" 
+                        [ngClass]="{odd:odd, even:even}"
+                        (click)="showDetail(index)">
+    
+                            <td *ngFor="let j of mssTableElement" 
+                            [attr.id]="j"
+                            >{{i[j]}}</td>
+    
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>    
+            </ng-template>
+            
+            
+        </div>  <!-- BOX -->
+
+        <div class="status-bar">
+            <p>Найдено: {{count}}</p>
+            <p class="copy-r">Лешок К.А. 2021</p>
+        </div>
+    </div>
+
+    <!-- DETAIL -->
+    <div id="" class="detail-wrap" [ngClass]="{'show':show, 'hide':!show}">
+        <div class="item-header">
+            <button class="item-h-ok" *ngIf="permission.Edit" (click)="onSave(detailList)">Сохранить</button>
+            <button class="item-h-cancel" (click)="showDetail(-1)">Выйти</button>
+        </div>
+
+        <div *ngIf="show; then item"></div>
+
+        <ng-template #item>
+            <div class="items-wrap">
+                <item *ngFor="let i of itemList" 
+                [table]="isIms" 
+                [(detailList)]="detailList" 
+                [name]="i" 
+                [value]="i"
+                ></item>
+            </div>
+        </ng-template>
+        
+    </div>
+
+</div>
+
+<div id="" class="new-item-wrap" [ngClass]="{'show':newItemShow, 'hide':!newItemShow}">
+    <div class="new-item-header">
+        <button class="item-h-ok" *ngIf="permission.Write" (click)="onSaveNew(newItemObj)">Сохранить</button>
+        <button class="item-h-cancel" (click)="newBtnClick()">Выйти</button>
+    </div>
+
+    <div *ngIf="newItemShow; then newitem"></div>
+    <ng-template #newitem>
+        <div class="items-wrap">
+            <new-item *ngFor="let i of itemList"
+            [table]="isIms"
+            [value]="i"
+            [(itemObj)]="newItemObj"
+            ></new-item>
+        </div>
+    </ng-template>
+</div>
+
+<div class="new-btn" *ngIf="permission.Write" (click)="newBtnClick()">
+    <span class="new-btn-icon"></span>
+</div>
+
+<div class="menu" [ngClass]="{'menu-show': isMenu}">
+    <!-- <span *ngIf="isMenu; then menu"></span> -->
+    <!-- <ng-template #menu> -->
+        <menu [ngClass]="{'sub-menu-show': isMenu}"></menu>
+    <!-- </ng-template> -->
+</div>

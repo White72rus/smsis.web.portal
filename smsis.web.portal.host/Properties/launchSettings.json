@@ -1,0 +1,22 @@
+﻿{
+    "profiles": {
+        "smsis.web.portal.host": {
+            "commandName": "Project",
+            "dotnetRunMessages": "true",
+            "launchBrowser": true,
+            "applicationUrl": "http://localhost:5010", // https://localhost:5011  разделение адресов через ";"
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        "smsis.web.portal.host.production": {
+            "commandName": "Project",
+            "dotnetRunMessages": "true",
+            "launchBrowser": false,
+            "applicationUrl": "http://localhost:5010", // https://localhost:5011  разделение адресов через ";"
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Production"
+            }
+        }
+    }
+}

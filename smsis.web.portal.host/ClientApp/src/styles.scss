@@ -1,0 +1,95 @@
+﻿@font-face {
+    font-family: 'BasisGrotesquePro';
+    src: url("../src/assets/fonts/BasisGrotesquePro-Bold-Web.ttf");
+    font-weight: bold;
+    font-style: normal;
+    }
+@font-face {
+    font-family: 'BasisGrotesquePro';
+    src: url("../src/assets/fonts/BasisGrotesquePro-Regular-Web.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BasisGrotesquePro';
+    src: url("../src/assets/fonts/BasisGrotesquePro-Medium-Web.ttf");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BasisGrotesquePro';
+    src: url("../src/assets/fonts/BasisGrotesquePro-Light-Web.ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'WebHostingHub-Glyphs';
+    src: url("../src/assets/fonts/WebHostingHub-Glyphs.ttf");
+    font-weight: bold;
+    font-style: normal;
+    }
+// @font-face {
+//     font-family: IconFont;
+//     src: url("/connections/resources/web/com.ibm.lconn.core.styles.oneui3/hikariTheme/fonts/IconFont.eot?ecb5a6623724c6cb21f9438931a9334b?#iefix?etag=20200928.172046") format("embedded-opentype"), url("/connections/resources/web/com.ibm.lconn.core.styles.oneui3/hikariTheme/fonts/IconFont.woff2?ecb5a6623724c6cb21f9438931a9334b?etag=20200928.172046") format("woff2"), url("/connections/resources/web/com.ibm.lconn.core.styles.oneui3/hikariTheme/fonts/IconFont.woff?ecb5a6623724c6cb21f9438931a9334b?etag=20200928.172046") format("woff"), url("/connections/resources/web/com.ibm.lconn.core.styles.oneui3/hikariTheme/fonts/IconFont.ttf?ecb5a6623724c6cb21f9438931a9334b?etag=20200928.172046") format("truetype");
+// }
+
+:root{
+    --admin-base-dark-color: rgb(42, 42, 42);
+}
+
+* {
+    margin: 0;
+    // background-color: rgb(90, 90, 90);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 1500px;
+    min-height: 869px;
+}
+
+body {
+    outline: solid 1px rgb(204, 74, 74);
+    // height: auto;
+    position: relative;
+}
+
+div {
+    background: inherit;
+}
+
+.loading {
+    font: lighter 50px/normal 'BasisGrotesquePro', Consolas, sans-serif;
+    height: 250px;
+    width: 250px;
+    padding: 60px 0;
+    color: rgba(123, 123, 123, 0.59);
+    position: fixed;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    border: solid 3px rgba(174, 174, 174, 0.8);
+    border-radius: 150px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    border-style: dotted;
+}
+
+app {
+    height: auto;
+    width: min-content;
+}
+
+h2 {
+    background-color: greenyellow;
+}
+
+.odd {
+
+}
+
+.even {
+
+}

@@ -1,0 +1,13 @@
+.notify-wrap {
+    background-color: transparent;
+    height: auto;
+    width: 400px;
+    position: fixed;
+    z-index: 10000;
+    top: 10px;
+    left: 10px; 
+}
+
+:host {
+    background-color: rgb(155, 155, 155);
+}

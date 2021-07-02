@@ -1,0 +1,23 @@
+<div class="item-wrap">
+    <div class="item-header">{{itemName}}:</div>
+
+    <div class="container" *ngIf="permission.Edit; else item">
+        
+        <div class="item-value" *ngIf="!edit; else onedit">"{{itemValue}}"</div>
+    
+        <ng-template #onedit>
+            <input id={{name}} class="item-input" type="text" [ngClass]="{'item-input-edit':edit}"
+                [(ngModel)]="stringValue">
+        </ng-template>
+
+    
+        <button class="item-btn" (click)="clickOnEdit()" *ngIf="!edit; else elseTemplate"></button>
+
+        <ng-template #elseTemplate>
+            <button class="item-btn item-btn-ok" (click)="clickOnOk()"></button>
+        </ng-template>
+    </div>
+    <ng-template #item>
+        <div class="item-value" >"{{itemValue}}"</div>
+    </ng-template>
+</div>

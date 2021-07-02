@@ -1,0 +1,157 @@
+<div class="container">
+    <div class="nav">
+        <button class="btn back" routerLink="/">
+            <!-- <a routerLink="/" href="#"></a> -->
+        </button>
+    </div>
+    <div class="bth-bar-top"></div>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th class="t_1"><input class="tcheckbox" type="checkbox" /></th>
+                    <th>Name</th>
+                    <th>Display Name</th>
+                    <th>Role</th>
+                    <th>Group</th>
+                    <th>In System</th>
+                    <th>State</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of users; let i = index" (click)="onEdit(i)">
+                    <td class="t_1"><input class="tcheckbox" type="checkbox" /></td>
+                    <td>{{item.Name}}</td>
+                    <td>{{item.Name}}</td>
+                    <td>{{item.Role}}</td>
+                    <td>null</td>
+                    <td>null</td>
+                    <td>nill</td>
+                </tr>
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+    <div class="bth-bar-bottom">
+        <button class="btn add-user" (click)="onAdd()">Создать</button>
+        <button class="btn del-user" (click)="onDel()">Удалить</button>
+    </div>
+</div>
+
+<div class="user-container" *ngIf="userForm">
+    <div class="header">
+        <button class="btn back" (click)="onEdit(0)"></button>
+    </div>
+    <div class="wrap">
+        <div class="form">
+            <input
+                class="login"
+                placeholder="Login"
+                [(ngModel)]="login"
+                (ngModelChange)="onChange('login')"
+            />
+            <span id="login" class="notice">{{loginNotice}}</span>
+            <input
+                class="pass"
+                placeholder="Password"
+                [(ngModel)]="pass"
+                (ngModelChange)="onChange('pass')"
+            />
+            <span id="pass" class="notice">{{passNotice}}</span>
+            <input
+                class="pass"
+                placeholder="Password"
+                [(ngModel)]="pass"
+                (ngModelChange)="onChange('pass')"
+            />
+            <span id="passConfirm" class="notice">{{passConfirmNotice}}</span>
+
+            <select class="select-group">
+                <option value="">User</option>
+                <option value="">Administrator</option>
+            </select>
+
+            <label class="container-checkbox">Read
+                <input name="region" type="checkbox" class="checkbox" id="read" [(ngModel)]="read" [checked]="read">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container-checkbox">Write
+                <input name="region" type="checkbox" class="checkbox" id="write" [(ngModel)]="write" [checked]="write">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container-checkbox">Edit
+                <input name="region" type="checkbox" class="checkbox" id="edit" [(ngModel)]="edit" [checked]="edit">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container-checkbox">Delete
+                <input name="region" type="checkbox" class="checkbox" id="delete" [(ngModel)]="delete" [checked]="delete">
+                <span class="checkmark"></span>
+            </label>
+
+            <button class="btn login-submit-btn" (click)="onSubmit()">Login</button>
+        </div>
+        <div class="info">
+        
+        </div>
+    </div>
+</div>
+
+<div class="user-container" *ngIf="newUserForm">
+    <div class="header">
+        <button class="btn back" (click)="onAdd()"></button>
+    </div>
+    <div class="wrap">
+        <div class="form">
+            <input
+                class="login"
+                placeholder="Login"
+                [(ngModel)]="login"
+                (ngModelChange)="onChange('login')"
+            />
+            <span id="login" class="notice">{{loginNotice}}</span>
+            <input
+                class="pass"
+                placeholder="Password"
+                [(ngModel)]="pass"
+                (ngModelChange)="onChange('pass')"
+            />
+            <span id="pass" class="notice">{{passNotice}}</span>
+            <input
+                class="pass"
+                placeholder="Password"
+                [(ngModel)]="passConfirm"
+                (ngModelChange)="onChange('passConfirm')"
+            />
+            <span id="passConfirm" class="notice">{{passConfirmNotice}}</span>
+
+            <select class="select-group" [(ngModel)]="select">
+                <option value="User">User</option>
+                <option value="Administrator">Administrator</option>
+            </select>
+
+            <label class="container-checkbox">Read
+                <input name="region" type="checkbox" class="checkbox" id="read" [(ngModel)]="read" [checked]="read">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container-checkbox">Write
+                <input name="region" type="checkbox" class="checkbox" id="write" [(ngModel)]="write" [checked]="write">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container-checkbox">Edit
+                <input name="region" type="checkbox" class="checkbox" id="edit" [(ngModel)]="edit" [checked]="edit">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container-checkbox">Delete
+                <input name="region" type="checkbox" class="checkbox" id="delete" [(ngModel)]="delete" [checked]="delete">
+                <span class="checkmark"></span>
+            </label>
+
+            <button class="btn login-submit-btn" (click)="onSubmit()">Login</button>
+        </div>
+        <div class="info">
+        
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+.n-toast {
+    width: auto;
+    height: 100px;
+    // padding: 10px;
+    font: normal 15px/normal 'BasisGrotesquePro', Consolas, sans-serif;
+    border: solid 0px rgb(1,1,1);
+    border-radius: 2px;
+    background-color: rgb(148, 232, 165);
+    color: rgb(95, 95, 95);
+    display: grid;
+    grid-template: 20px 1fr 20px/ 90px 1fr;
+    .n-icon {
+        grid-row: 1/4;
+        grid-column: 1/2;
+        background-color: transparent;
+        &::before {
+            font: normal 35px/normal 'WebHostingHub-Glyphs', sans-serif;
+            content: "\2713";
+            position: absolute;
+            top: 23px;
+            left: 32px;
+        }
+    }
+    p {
+        grid-row: 2/3;
+        grid-column: 2/3;
+        padding: 0 10px;
+    }
+}

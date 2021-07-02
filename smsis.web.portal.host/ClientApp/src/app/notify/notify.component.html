@@ -1,0 +1,10 @@
+<div class="notify-wrap">
+    <span *ngIf="_show; then boot"></span>
+    <ng-template #boot>
+        <toast *ngFor="let item of Object.keys(itemsList)"
+        [items]="itemsList[item]"
+        ></toast>
+    </ng-template>
+
+    <button class="item-h-ok" (click)="onEvent()">Go</button>
+</div>

@@ -1,0 +1,53 @@
+<!-- <div class="">{{out}}</div> -->
+<div class="place-wrap" *ngIf="dataBase == 'ims'; else elseTemplate">
+    <div class="cell" >{{in.GroupSd}}</div>
+    <div class="cell" >{{in.Region}}</div>
+    <div class="cell" >{{in.District}}</div>
+    <div class="cell" >{{in.City}}</div>
+    <div class="cell" >{{in.Addres}}</div>
+    <div class="cell" >{{in.NumbersRange}}</div>
+    <div class="cell" >{{in.Capacity}}</div>
+    <div class="cell" >{{in.UseCapacity}}</div>
+    <div class="cell" >{{in.Technology}}</div>
+    <div class="cell" >{{in.Protocol}}</div>
+    <div class="cell" >{{in.CpeType}}</div>
+    <div class="cell" >{{in.ObjectType}}</div>
+    <div class="cell" >{{in.HostName}}</div>
+    <div class="cell" >{{in.IpVoice}}</div>
+    <div class="cell" >{{in.IpControl}}</div>
+</div>
+
+<ng-template #elseTemplate>
+    <div class="cell" >{{in.LinkMgcf}}</div>
+    <div class="cell" >{{in.PortNumberE1}}</div>
+    <div class="cell" >{{in.SignalType}}</div>
+    <div class="cell" >{{in.DPC}}</div>
+    <div class="cell" >{{in.TS}}</div>
+    <div class="cell" >{{in.SL}}</div>
+    <div class="cell" >{{in.MctetGctet}}</div>
+    <div class="cell" >{{in.District}}</div>
+    <div class="cell" >{{in.City}}</div>
+    <div class="cell" >{{in.ObjMss}}</div>
+    <div class="cell" >{{in.TrunkGroup}}</div>
+    <div class="cell" >{{in.TransportSDH}}</div>
+    <div class="cell" >{{in.Prefix}}</div>
+    <div class="cell" >{{in.State}}</div>
+</ng-template>
+
+<!-- <div class="cell" >{{groupSd}}</div>
+<div class="cell" >{{region}}</div>
+<div class="cell" >{{district}}</div>
+<div class="cell" >{{city}}</div>
+<div class="cell" >{{addres}}</div>
+<div class="cell" >{{numbersRange}}</div>
+<div class="cell" >{{capacity}}</div>
+<div class="cell" >{{capacityUse}}</div>
+<div class="cell" >{{technology}}</div>
+<div class="cell" >{{protocol}}</div>
+<div class="cell" >{{cpeType}}</div>
+<div class="cell" >{{objectType}}</div>
+<div class="cell" >{{hostName}}</div>
+<div class="cell" >{{ipVoice}}</div>
+<div class="cell" >{{ipControl}}</div> -->
+  
+
