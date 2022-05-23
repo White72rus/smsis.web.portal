@@ -20,9 +20,6 @@ namespace smsis.web.portal.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //  userid=admin;Server=localhost;password=###11001Admin;database=smsis_portal
-            //  userid=root;Server=localhost;password=Mysql11001@@@;database=smsis_portal
-
             optionsBuilder.UseMySql("userid=root;Server=localhost;password=Mysql11001@@@;database=smsis_portal",
                 mySqlOptionsAction: sqlOption => {
                     sqlOption.MigrationsAssembly(Assembly.GetExecutingAssembly().GetName().Name);
